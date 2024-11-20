@@ -1,9 +1,9 @@
 1.reportScheduler
 
 
-	Improper Naming Convention : Class Name Doesn't Follow Naming Conventions it should be in Pascal Case convention. it should be ReportScheduler.
+	<1st line >Improper Naming Convention : Class Name Doesn't Follow Naming Conventions it should be in Pascal Case convention. it should be ReportScheduler.
 
-	Inappropriate Static Method :Static Method in a General-Purpose Class.
+	<Lines 6-11>Inappropriate Static Method :Static Method in a General-Purpose Class.
 
 	Violation of Encapsulation :Lack of Encapsulation, The scheduleReport method directly outputs to System.out, tightly coupling the logic to a specific output mechanism. This makes it harder to adapt the class.
 
@@ -14,11 +14,9 @@
 2.globalInventoryData
 
 
-	Improper Naming Convention: Class Name Doesn't Follow Naming Conventions. It should be in camel case convension.
+	<Line 3>Improper Naming Convention: Class Name Doesn't Follow Naming Conventions. It should be in camel case convension.
 
-	Global Data: Overuse of Static Variables,The use of static variables (products, warehouses, orders, currentProductId, currentOrderId) creates global mutable state.
-
-	Multiple Responsibilities in One Class: Violation of Single Responsibility Principle (SRP).
+	<Line 4>Global Data: Overuse of Static Variables,The use of static variables (products, warehouses, orders, currentProductId, currentOrderId) creates global mutable state.
 
 	Lack of Abstraction: Hardcoded IDs and Lack of Encapsulation.
 
@@ -29,7 +27,7 @@
 
 	Violation of Single Responsibility Principle (SRP):The inventorySystem class handles various unrelated responsibilities.
 
-	Nested Classes: The Product and Order classes are defined as inner classes, which ties them tightly to the inventorySystem class. This violates the principle of modularity and makes the code harder to maintain or reuse.
+	<Lines 9-45>Nested Classes: The Product and Order classes are defined as inner classes, which ties them tightly to the inventorySystem class. This violates the principle of modularity and makes the code harder to maintain or reuse.
 
 	Overuse of Static Data:The class depends on global static data from globalInventoryData to store products, warehouses, and orders. This creates tight coupling and makes testing harder.
 
@@ -39,7 +37,7 @@
 
 	Improper Error Handling : The addProduct method uses a generic catch (Exception e) without properly handling or logging specific exceptions. This can mask underlying issues.
 
-	Hard-Coded Logic :Discount logic in calculateFinalPrice (e.g., "bulk" and "seasonal" discounts) is hardcoded. This makes the code less flexible.
+	<Line 89>Hard-Coded Logic :Discount logic in calculateFinalPrice (e.g., "bulk" and "seasonal" discounts) is hardcoded. This makes the code less flexible.
 
 	Duplicated Logic : The methods calculateTotalInventoryValue, calculateWarehouseValue, and calculateCategoryValue have repetitive logic for iterating over products.
 
