@@ -1,0 +1,70 @@
+1.reportScheduler
+
+
+	Improper Naming Convention : Class Name Doesn't Follow Naming Conventions it should be in Pascal Case convention. it should be ReportScheduler.
+
+	Inappropriate Static Method :Static Method in a General-Purpose Class.
+
+	Violation of Encapsulation :Lack of Encapsulation, The scheduleReport method directly outputs to System.out, tightly coupling the logic to a specific output mechanism. This makes it harder to adapt the class.
+
+	Missing Validation: Missing Validation or Business Logic, The method does not validate reportType or frequency.
+
+	Procedural Programming: Lack of Object-Oriented Principles.
+
+2.globalInventoryData
+
+
+	Improper Naming Convention: Class Name Doesn't Follow Naming Conventions. It should be in camel case convension.
+
+	Global Data: Overuse of Static Variables,The use of static variables (products, warehouses, orders, currentProductId, currentOrderId) creates global mutable state.
+
+	Multiple Responsibilities in One Class: Violation of Single Responsibility Principle (SRP).
+
+	Lack of Abstraction: Hardcoded IDs and Lack of Encapsulation.
+
+	Utility Method Without Context: Poor Design for Discount Calculation.
+
+
+3.inventorySystem
+
+	Violation of Single Responsibility Principle (SRP):The inventorySystem class handles various unrelated responsibilities.
+
+	Nested Classes: The Product and Order classes are defined as inner classes, which ties them tightly to the inventorySystem class. This violates the principle of modularity and makes the code harder to maintain or reuse.
+
+	Overuse of Static Data:The class depends on global static data from globalInventoryData to store products, warehouses, and orders. This creates tight coupling and makes testing harder.
+
+	Lack of Encapsulation:Classes like Product and Order expose their fields as public, breaking encapsulation.
+
+	Long and Complex Methods:  Methods like addProduct and processOrder are lengthy and handle multiple responsibilities.
+
+	Improper Error Handling : The addProduct method uses a generic catch (Exception e) without properly handling or logging specific exceptions. This can mask underlying issues.
+
+	Hard-Coded Logic :Discount logic in calculateFinalPrice (e.g., "bulk" and "seasonal" discounts) is hardcoded. This makes the code less flexible.
+
+	Duplicated Logic : The methods calculateTotalInventoryValue, calculateWarehouseValue, and calculateCategoryValue have repetitive logic for iterating over products.
+
+
+4.inventoryManagementSystem
+
+	Violates Single Responsibility Principle (SRP) : The main method performs multiple unrelated tasks, such as: setting up warehouse data, adding products to the inventory, processing orders ,generating and displaying reports.
+
+	Direct Access to Global Data: The globalInventoryData class is accessed directly to add warehouses. This tightly couples the inventoryManagementSystem class to the global state, making testing and debugging harder.
+
+	Hardcoded Data  : Warehouse data, product details, and order information are hardcoded, which makes the code inflexible and not reusable.
+
+	Repetition in Initialization : similar code is repeated for adding warehouses and products.
+
+	Lack of Validation : There is no validation for whether the product IDs in product Ids exist in the inventory.
+
+	Tight Coupling :  The inventoryManagementSystem is directly coupled with inventorySystem and globalInventoryData, reducing modularity.
+
+5.Warehouse
+
+	Lack of Encapsulation :  The fields id, name, and location are declared as public. This breaks encapsulation and allows direct modification of these fields from outside the class, which can lead to unexpected behavior.
+
+	Inconsistent Parameter Naming :  The parameter i in the constructor does not convey its purpose (it represents the warehouse ID). This can make the code harder to understand.
+
+	Missing Validation : The constructor does not validate the inputs (e.g., ensuring the id is positive, name and location are non-null and non-empty).
+		
+
+
